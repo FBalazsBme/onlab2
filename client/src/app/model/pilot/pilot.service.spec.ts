@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PilotaService } from './pilota.service';
+import { PilotService } from './pilot.service';
 
-describe('PilotaService', () => {
+describe('PilotService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PilotaService = TestBed.get(PilotaService);
+    const service: PilotService = TestBed.get(PilotService);
     expect(service).toBeTruthy();
   });
 });

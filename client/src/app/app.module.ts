@@ -13,6 +13,7 @@ import { CarEditComponent } from './car-edit/car-edit.component';
 import { FormsModule } from '@angular/forms';
 import { CarList2Component } from './car-list2/car-list2.component';
 import { FilterPipe} from './filter.pipe';
+import { PilotListComponent } from './pilot-list/pilot-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe} from './filter.pipe';
     FilterPipe,
     CarListComponent,
     CarEditComponent,
-    CarList2Component
+    CarList2Component,
+    PilotListComponent
   ],
   imports: [
     BrowserModule,
