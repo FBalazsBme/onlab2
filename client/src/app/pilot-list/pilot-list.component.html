@@ -1,3 +1,16 @@
-<p>
-  pilot-list works!
-</p>
+<mat-card>
+  <mat-card-title>Pilot list</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <input type="text" [(ngModel)]="searchText" placeholder="Filter Pilots" class="filter-input">
+      <mat-list-item *ngFor="let pilot of pilots | filter : searchText">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/pilot-edit', pilot.id]">{{pilot.name}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+
+  <button mat-fab color="primary" [routerLink]="['/pilot-add']">Add</button>
+</mat-card>
