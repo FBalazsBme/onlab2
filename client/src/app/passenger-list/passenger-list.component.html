@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>Passenger list</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <input type="text" [(ngModel)]="searchText" placeholder="Filter Pilots by Name" class="filter-input">
+      <mat-list-item *ngFor="let passenger of passengers | filter : searchText">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/passenger-edit', passenger.id]">{{passenger.birthDate}}</a>
+          <a mat-button (click)="delete(passenger.id)" >Delete</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+
+  <button mat-fab color="primary" [routerLink]="['/passenger-add']">Add</button>
+</mat-card>

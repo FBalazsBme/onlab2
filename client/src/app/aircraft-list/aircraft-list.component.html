@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>Aircraft list</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <input type="text" [(ngModel)]="searchText" placeholder="Filter Aircraft by id" class="filter-input">
+      <mat-list-item *ngFor="let aircraft of aircrafts | filter : searchText">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/aircraft-edit', aircraft.id]">{{aircraft.id}}</a>
+          <a mat-button (click)="delete(aircraft.id)" >Delete</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+
+  <button mat-fab color="primary" [routerLink]="['/aircraft-add']">Add</button>
+</mat-card>

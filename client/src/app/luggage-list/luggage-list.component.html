@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>Luggage list</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <input type="text" [(ngModel)]="searchText" placeholder="Filter Luggage by Name" class="filter-input">
+      <mat-list-item *ngFor="let luggage of Luggage | filter : searchText">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/luggage-edit', luggage.id]">{{luggage.weight}}</a>
+          <a mat-button (click)="delete(luggage.id)" >Delete</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+
+  <button mat-fab color="primary" [routerLink]="['/luggage-add']">Add</button>
+</mat-card>

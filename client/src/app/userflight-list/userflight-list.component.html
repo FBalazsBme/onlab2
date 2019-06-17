@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>Flight list</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <input type="text" [(ngModel)]="searchText" placeholder="Filter flights by Name" class="filter-input">
+      <mat-list-item *ngFor="let flight of flights | filter : searchText">
+        <h3 mat-line>
+          <a mat-button >{{flight.startDate}},
+            {{flight.finishDate}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+  <button mat-fab color="primary" [routerLink]="['/main-menu']">Back</button>
+</mat-card>

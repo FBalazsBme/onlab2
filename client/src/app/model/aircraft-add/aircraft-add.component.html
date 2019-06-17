@@ -1,0 +1,24 @@
+<mat-card>
+  <form #pilotForm="ngForm" (ngSubmit)="save(pilotForm.value)">
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="pilot.href">
+      <mat-form-field>
+        <input list="licenseList" placeholder="license" id="size" name="licensesize" />
+        <datalist id="licenseList">
+          <option value="SMALL">
+          <option value="MEDIUM">
+          <option value="BIG_2_ENGINES">
+          <option value="BIG_4_ENGINES">
+        </datalist>
+
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!pilotForm.form.valid">Save</button>
+      <button mat-raised-button color="secondary" (click)="remove(pilot.href)"
+              *ngIf="pilot.href" type="button">Delete</button>
+      <a mat-button routerLink="/pilot-list">Cancel</a>
+    </mat-card-actions>
+  </form>
+</mat-card>
