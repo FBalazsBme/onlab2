@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {PilotListComponent} from './pilot-list/pilot-list.component';
 import {MainMenuComponent} from './main-menu/main-menu.component';
 
+
 const routes: Routes = [
-  { path: '', redirectTo: '/main-menu', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'pilot-list',
     component: PilotListComponent
@@ -15,8 +16,6 @@ const routes: Routes = [
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+export const routing = RouterModule.forRoot(routes);
+
 export class AppRoutingModule { }
