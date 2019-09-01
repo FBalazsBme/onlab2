@@ -30,6 +30,10 @@ public class AirportController {
 				.stream().collect(Collectors.toList());
 	}
 
+	public void masterChange() {
+
+	}
+
 
 	@GetMapping("/find-repter-szhkozgte")
 	@CrossOrigin(origins = "http://localhost:4200")
